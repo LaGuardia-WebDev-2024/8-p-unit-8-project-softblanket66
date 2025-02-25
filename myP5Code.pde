@@ -12,7 +12,7 @@ setup = function() {
     drawStar(370, 370, color(235, 195, 52));
     drawShark(310, 250, color(219, 240, 255));
     drawBubble(300, 100, color(255, 255, 255));
-    //drawFace(266, 321);
+    drawFace(266, 321);
    
 };
 
@@ -22,9 +22,7 @@ draw = function(){
 };
 
 //🟢mouseClicked Function - will run when mouse is clicked
-mouseClicked = function(){
 
-}
 
 //🟡drawFish Function - will run when called
 
@@ -74,23 +72,18 @@ var drawFatfish = function(fatfishX, fatfishY, fatfishColor){
   }
   
 
+var drawFace2 = function(faceX, faceY) {
+
+  fill(235, 253, 255);
+  ellipse(faceX - 10, faceY - 10, 10, 10); // eyes
 
 
-//var drawFace = function(faceX, faceY) {
- // fill(255, 255, 0);
-//  ellipse(faceX, faceY, 190, 190); // face
-  //fill(46, 46, 41);
-  //ellipse(faceX - 30, faceY - 50, 30, 30); // eyes
-  //ellipse(faceX + 44, faceY - 55, 30, 30);
-  //fill(252, 65, 65);
-  //ellipse(facex + 19, faceY + 32, 82, 81); // mouth
-  //fill（255,0,0);
-//}
+}
 
 var drawBubble = function(bubbleX, bubbleY, bubbleColor){
-  textSize(20);
+  textSize(40);
   fill(bubbleColor);
-  text("𓈒𓏸", bubbleX, bubbleY);
+  text("🫧", bubbleX, bubbleY);
   };
 
 //🟡mouseClicked Function - will run when the mouse is clicked
@@ -98,6 +91,6 @@ mouseClicked = function(){
   var myText = "x: " + mouseX + "\ny: " + mouseY;
   console.log(myText);
 
-  drawFace();
-
+  drawFace2(mouseX,mouseY);
+  drawBubble(mouseX,mouseY)
 };
