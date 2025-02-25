@@ -73,9 +73,7 @@ var drawFatfish = function(fatfishX, fatfishY, fatfishColor){
   text("𓆡", fatfishX, fatfishY);
   }
   
-var drawFace = function(faceX,faceY){
 
-}
 
 
 //var drawFace = function(faceX, faceY) {
