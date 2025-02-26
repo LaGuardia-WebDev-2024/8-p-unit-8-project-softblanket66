@@ -3,7 +3,8 @@ setup = function() {
     size(600, 400);
     background(255,255,255,0);
     
-    drawTurtle(200, 350, color(200,0,200)); 
+    // first index is x-axis, second y-axis
+    drawTurtle(200, 350, color(200,0,200), 70); 
     drawFish(310, 340, color(255, 231, 176));
     drawFish(130, 320, color(255, 176, 250));
     drawFatfish(430, 320, color(173, 255, 202));
@@ -11,20 +12,10 @@ setup = function() {
     drawGrass(50, 242, color(235, 195, 52));
     drawStar(370, 370, color(235, 195, 52));
     drawShark(310, 250, color(219, 240, 255));
-    drawBubble(300, 100, color(255, 255, 255));
     drawFace(266, 321);
-   
 };
 
 //🟢draw Function - will run on repeat
-draw = function(){
-
-};
-
-//🟢mouseClicked Function - will run when mouse is clicked
-
-
-//🟡drawFish Function - will run when called
 
 var drawFish = function(fishX, fishY, fishColor){
   textSize(50);
@@ -32,8 +23,8 @@ var drawFish = function(fishX, fishY, fishColor){
   text("𓆝", fishX, fishY);
 }
 
-var drawTurtle = function(turtleX, turtleY, turtleColor){
-  textSize(50);
+var drawTurtle = function(turtleX, turtleY, turtleColor, size){
+  textSize(size);
   fill(turtleColor);
   text("𓆉 ", turtleX, turtleY);
   }
@@ -44,11 +35,10 @@ var drawStar = function(starX, starY, starColor){
   text("𓇼", starX, starY);
   }
   
-
-var drawFace=function(){
+var drawFace=function(x, y){
   var faceSize = random(15,20);
-  var faceX = mouseX + random(-12,12);
-  var faceY = mouseY + random(-12,12);
+  var faceX = x + random(-250,250);
+  var faceY = y + random(-250,250);
   textSize(faceSize);
   text("🫧",faceX, faceY);
 }
@@ -72,11 +62,12 @@ var drawFatfish = function(fatfishX, fatfishY, fatfishColor){
   }
   
 
-var drawFace2 = function(faceX, faceY) {
-
+var drawFace2 = function(i, j) {
+  var face2X = i + random(-250,250);
+  var face2Y = j + random(-250,250);
   fill(235, 253, 255);
-  ellipse(faceX - 10, faceY - 10, 10, 10); // eyes
-
+  ellipse(face2X - 10, face2Y - 10, 10, 10); // bubble
+  
 
 }
 
@@ -86,11 +77,18 @@ var drawBubble = function(bubbleX, bubbleY, bubbleColor){
   text("🫧", bubbleX, bubbleY);
   };
 
+//🟢mouseClicked Function - will run when mouse is clicked
+
+
+//🟡drawFish Function - will run when called
+
+  
+
 //🟡mouseClicked Function - will run when the mouse is clicked
 mouseClicked = function(){
   var myText = "x: " + mouseX + "\ny: " + mouseY;
   console.log(myText);
 
   drawFace2(mouseX,mouseY);
-  drawBubble(mouseX,mouseY)
+  drawFace(mouseX,mouseY);
 };
